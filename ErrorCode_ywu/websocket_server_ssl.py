@@ -2,7 +2,8 @@
 #coding=utf-8
 #Author: Amanda Shan <chfshan@grandstream.cn>;jhai@grandstream.cn
 import sys
-import stun_by_ywu,logging
+# import stun_by_ywu
+import logging
 import copy
 from _symtable import LOCAL
 sys.path.append(r'.')
@@ -55,7 +56,9 @@ global SIP_ID_NUMBER,SIP_ID_PASSWORD,LOCAL_PC_RTP_PORT
 global INVITE_SDP
 INVITE_SDP = {}.fromkeys(("ip","port1",'port2',"port3","port4","port5"),"NONE")
 connectionlist = {}  
-g_code_length = 0 
+global g_code_length 
+g_code_length= 0 
+global g_header_length
 g_header_length = 0 
 log_mode='info'
 logging.basicConfig(level=logging.DEBUG,format='[%(asctime)s] [%(levelname)s] [%(filename)s] [line%(lineno)d]: %(message)s',datefmt='%Y%m%d%H%M%S',filename='E:\share\log_python\AvsTest.log',filemode='w')
@@ -79,6 +82,7 @@ def log(level,log):
         print "%s [%s] %s"%(time.strftime('%Y%m%d%H%M%S'),level,log)
 def get_ip_address():
     localIP = socket.gethostbyname(socket.gethostname())
+    logging.info(localIP)
     return localIP
 class projectx_base(unittest.TestCase):
     def __init__(self,AUTHOR = "chfshan",moduleID = "projectx",caseID = "0000001"):
@@ -1677,7 +1681,7 @@ class Websocket(threading.Thread):
             ok_response += "Call-ID: %s\r\n" % msg_info.call_id
             ok_response += "CSeq: %s\r\n" %msg_info.cseq
             ok_response += "X-ECode :%s" % xecode
-            expiresindex1 = msg_info.expires_header.find('NONE')
+            expiresindex1 = msg_info.expires_header.find('NONE') 
             if expiresindex1 == -1:
                 ok_response += "%s\r\n"%msg_info.expires_header
             ok_response += "Content-Length: 0\r\n\r\n"
@@ -1720,8 +1724,8 @@ class Websocket(threading.Thread):
                     except Exception as e:
                         log('info',"line%s:Socket Handshaken with %s failed!  %s") % (sys._getframe().f_lineno,str(e))                                       
             else:  
-                global g_code_length  
-                global g_header_length  
+                # global g_code_length  
+                # global g_header_length  
                 mm=self.conn.read()  
                 if len(mm) <= 0:  
                     continue  
