@@ -16,9 +16,7 @@ class Browser_ipvt(object):
 		time.sleep(1)
 		self.browser.find_element_by_id("meetingTheme").send_keys("sunny")
 		self.browser.find_element_by_id("proAccount").send_keys("8200433")
-		self.browser.find_element_by_id("muteState").click()
-		self.browser.find_element_by_id("isParticipantsAu").click()
-		self.browser.find_element_by_xpath(".//*[@id='createMeetingForm']/table/tbody/tr[16]/td[2]/button[1]").click()
+		self.browser.find_element_by_xpath(".//*[@class='btn btn-blue meetingSubmit']").click()
 
 		time.sleep(1)
 
