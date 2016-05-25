@@ -1,0 +1,8 @@
+[root@Opensips-126 logs]# scp opensips.log-20160517 192.168.121.130:/un
+
+The authenticity of host '192.168.121.130 (192.168.121.130)' can't be established.
+RSA key fingerprint is a3:ad:86:3d:e2:5f:ba:dc:9c:21:ff:bc:47:95:75:ec.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.168.121.130' (RSA) to the list of known hosts.
+root@192.168.121.130's password: 
+opensips.log-20160517                                                   100%  182MB  60.8MB/s   00:03    

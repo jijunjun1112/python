@@ -1,0 +1,7 @@
+1.首先用vi命令打开文件
+2.在vi命令模式中使用 :set ff 命令,可以看到改文件的格式为dos
+3.修改文件format为unix:
+	方法一：使用vi修改文件format,命令：set ff=unix,执行完后再通过set ff命令查看文件格式
+	方法二：直接使用dos2unix命令修改:dos2unix test.sh   
+4.修改完后再次执行./test.sh，
+

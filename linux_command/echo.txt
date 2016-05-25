@@ -1,0 +1,3 @@
+echo "hello" >> 1.log           追加hello字符串到1.log文件末尾，另起一行
+echo "hellohello" > 1.log       重新书写1.log的内容为hellohello
+

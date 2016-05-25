@@ -1,0 +1,19 @@
+安装sendmail
+[root@vps478753 ~]# yum -y install sendmail
+
+启动sendmail
+[root@vps478753 ~]# /etc/init.d/sendmail start
+Starting sendmail: [ OK ]
+Starting sm-client: [ OK ]
+
+通过文件内容发送邮件
+[root@vps478753 ~]# mail -s 'Test mail' 317392058@qq.com < /etc/passwd
+
+如果提示mail: command not found
+那么就是没有安装mail命令，此时需要安装mail命令
+
+[root@vps478753 ~]# yum install mailx -y
+然后再重新发送以下邮件就好了！
+
+sendmail.sh
+echo 'hello world' | mail -s "Subject" -t yanggang@ithomer.com,yanggang_2050@163.com -a From:463103470@qq.com
