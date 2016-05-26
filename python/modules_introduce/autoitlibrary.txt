@@ -1,0 +1,1 @@
+AutoItLibrary is a Robot Framework keyword library wrapper for for the freeware AutoIt tool (http://www.autoitscript.com/autoit3/index.shtml) using AutoIt¡¯s AutoItX.dll COM object. The AutoItLibrary class provides a proxy for the AutoIt keywords callable on the AutoIt COM object and provides additional high-level keywords implemented as methods in this class

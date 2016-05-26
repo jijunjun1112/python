@@ -1,0 +1,2 @@
+RF+Selenium2Library+Sikuli集成环境搭建:
+http://blog.csdn.net/xc5683/article/details/11189259
