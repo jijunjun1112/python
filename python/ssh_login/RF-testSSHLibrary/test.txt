@@ -1,0 +1,9 @@
+*** Settings ***
+Library           SSHLibrary
+
+*** Test Cases ***
+test
+    Open Connection    192.168.121.130    port=22
+    login    root    123456
+    ${output}    execute command    ls
+    close connection

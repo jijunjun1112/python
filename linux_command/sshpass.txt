@@ -1,0 +1,11 @@
+sshpass -p "ec2@gs.com" ssh ec2-user@11.0.5.6 -p 26222
+
+sshpass: 用于非交互的ssh 密码验证 
+ssh登陆不能在命令行中指定密码，也不能以shell中随处可见的，sshpass 的出现，解决了这一问题。它允许你用 -p 参数指定明文密码，然后直接登录远程服务器。 它支持密码从命令行,文件,环境变量中读取
+
+
+sshpass与ssh进行远程登陆的区别在于：
+ssh需要进行交互，sshpass不需要进行交互。如下：
+[ec2-user@ip-11-0-180-250 connect_script]$ ssh ec2-user@11.0.5.6
+ec2-user@11.0.5.6's password: 
+Last login: Mon May 30 03:43:29 2016 from 11.0.180.250
